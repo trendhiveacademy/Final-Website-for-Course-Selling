@@ -18,12 +18,22 @@
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative;
         }
         iframe {
             width: 100%;
             height: 480px;
             border: none;
             border-radius: 5px;
+            pointer-events: none; /* Blocks interactions */
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: transparent;
         }
     </style>
 </head>
@@ -31,9 +41,8 @@
 
     <div class="video-container">
         <h2>Course Video</h2>
-        <iframe src="https://drive.google.com/file/d/1PnIYdyXBJT6FFKt6o27K6jhhXq5ib8LU/preview" 
-                allow="autoplay">
-        </iframe>
+        <div class="overlay"></div> <!-- Blocks clicks on the video -->
+        <iframe src="https://drive.google.com/file/d/1PnIYdyXBJT6FFKt6o27K6jhhXq5ib8LU/preview" allow="autoplay"></iframe>
     </div>
 
 </body>
